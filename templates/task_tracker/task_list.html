@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task list</title>
+</head>
+<body>
+    {% for task in tasks %}
+        <p> {{ task.title }} </p>
+        <p> {{ task.description }} </p>
+        <p> {{ task.status }} </p>
+    {% endfor %}
+</body>
+</html>
