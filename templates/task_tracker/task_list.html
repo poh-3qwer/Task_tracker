@@ -7,9 +7,10 @@
 </head>
 <body>
     {% for task in tasks %}
-        <p> {{ task.title }} </p>
+        <a href="{% url 'task-detail' task.pk %}"> {{ task.title }} </a>
         <p> {{ task.description }} </p>
         <p> {{ task.status }} </p>
     {% endfor %}
+    <a href="{% url 'task-create' %}">Створити завдання</a>
 </body>
 </html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детальний огляд</title>
+</head>
+<body>
+    <h2>{{ task.title }}</h2>
+    <p>{{ task.status }}</p>
+    <p>{{ task.priority }}</p>
+    <a href="{% url 'task-update' task.pk %}">Змінити завдання</a>
+    <a href="{% url 'task-delete' task.pk %}">Видалити завдання</a>
+</body>
+</html>
