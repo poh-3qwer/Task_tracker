@@ -1,0 +1,64 @@
+.main_body {
+    background-color: bisque;
+}
+
+.app_title {
+    all: revert;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    color: black;
+}
+
+.task_list {
+    border-color: rgb(231, 249, 241);
+    border-radius: 15px;
+    text-align: center;
+    color: cadetblue;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    background-color: cornsilk;
+    transition: transform 2s ease;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+}
+
+.task_list:hover {
+    transform: scale(1.07);
+}
+
+.creation_form_body {
+    background-color: bisque;
+}
+
+.creation_form_text {
+    all: revert;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    color: black;
+}
+
+.creation_form {
+    all: unset;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    color: black;
+}
+
+.create-btn {
+    margin-left: 550px;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+}
+
+.detail_body {
+    background-color: bisque;
+}
+
+.task_detail {
+    all: unset;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    color: black;
+}

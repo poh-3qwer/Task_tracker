@@ -20,8 +20,8 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('task_tracker.urls')),
-    path('details/', include('task_tracker.urls')),
-    path('create-task/', include('task_tracker.urls')),
-    path('update-task/', include('task_tracker.urls')),
-    path('delete-task/', include('task_tracker.urls')),
+    #path('details/', include('task_tracker.urls')),
+    #path('create-task/', include('task_tracker.urls')),
+    #path('update-task/', include('task_tracker.urls')),
+    #path('delete-task/', include('task_tracker.urls')),
 ]
