@@ -46,7 +46,7 @@
 }
 
 .create-btn {
-    margin-left: 550px;
+    margin-left: 675px;
     font-size: 1.5rem;
     padding: 10px 20px;
 }
@@ -56,9 +56,8 @@
 }
 
 .task_detail {
-    all: unset;
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 30px;
-    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+    font-size: 30px !important;
+    color: cadetblue !important;
 }
