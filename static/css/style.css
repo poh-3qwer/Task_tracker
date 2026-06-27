@@ -61,3 +61,35 @@
     font-size: 30px !important;
     color: cadetblue !important;
 }
+
+.detail_txt {
+    all: revert;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+    font-size: 30px !important;
+    color: black !important;
+}
+
+.delete_body {
+    background-color: bisque;
+}
+
+.create-form-btn {
+    margin-left: 675px; 
+}
+
+.return-btn {
+    margin-top: 20px;
+}
+
+.delete-btn {
+    margin-top: 30px;
+}
+
+.delete_txt {
+    all: revert;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+    font-size: 40px !important;
+    color: black !important;
+}
