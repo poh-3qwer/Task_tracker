@@ -15,6 +15,22 @@
         <p>{{ task.status }}</p>
         <p>{{ task.priority }}</p>
     </div>
+    <div class="comments">
+        <h3>Коментарі</h3>
+        {% for comment in task.comments.all %}
+            <p>{{ comment.text }}</p>
+            <small>{{ comment.creator.username }}</small>
+            <small>{{ comment.created_ad }}</small>
+            <a href="{% url 'edit-comment' comment.pk %}">Змінити коментар</a>
+        {% empty %}
+            <h5>Коментарів ще немає</h5>
+        {% endfor %}
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        {{ comment_form.as_p }}
+        <button type="submit">Додати коментар</button>
+    </form>
     <div class="d-grid gap-2 col-3 mx-auto">
         <a class="btn btn-warning" href="{% url 'task-update' task.pk %}" role="button">Змінити завдання</a>
         <a class="btn btn-danger" href="{% url 'task-delete' task.pk %}" role="button">Видалити завдання</a>

@@ -24,3 +24,10 @@ class Task(models.Model):
     priority = models.CharField(max_length=15, choices=PRIORITY_CHOICES, default="low")
     due_date = models.DateTimeField(null=True, blank=True)
     creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name='tasks')
+
+
+class Comment(models.Model):
+    task = models.ForeignKey(Task, on_delete=models.CASCADE, related_name='comments')
+    creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments')
+    text = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
