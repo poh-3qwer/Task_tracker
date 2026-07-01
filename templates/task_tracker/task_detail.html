@@ -15,25 +15,27 @@
         <p>{{ task.status }}</p>
         <p>{{ task.priority }}</p>
     </div>
-    <div class="comments">
-        <h3>Коментарі</h3>
-        {% for comment in task.comments.all %}
-            <p>{{ comment.text }}</p>
-            <small>{{ comment.creator.username }}</small>
-            <small>{{ comment.created_ad }}</small>
-            <a href="{% url 'edit-comment' comment.pk %}">Змінити коментар</a>
-        {% empty %}
-            <h5>Коментарів ще немає</h5>
-        {% endfor %}
-    </div>
-    <form method="post">
-        {% csrf_token %}
-        {{ comment_form.as_p }}
-        <button type="submit">Додати коментар</button>
-    </form>
     <div class="d-grid gap-2 col-3 mx-auto">
         <a class="btn btn-warning" href="{% url 'task-update' task.pk %}" role="button">Змінити завдання</a>
         <a class="btn btn-danger" href="{% url 'task-delete' task.pk %}" role="button">Видалити завдання</a>
+    </div>
+        <h3 class="text-center p-2 text_comment">Коментарі</h3>
+        {% for comment in task.comments.all %}
+        <div class="add_comments">
+                <p>{{ comment.text }}</p>
+                <small>{{ comment.creator.username }}</small>
+                <small>{{ comment.created_ad }}</small>
+                <a class="btn btn-outline-primary p-1" href="{% url 'edit-comment' comment.pk %}">Змінити коментар</a>
+        </div>
+            {% empty %}
+                <h5 class="text-center">Коментарів ще немає</h5>
+            {% endfor %}
+    <div class="add_comment_form">
+        <form method="post">
+            {% csrf_token %}
+            {{ comment_form.as_p }}
+            <button type="submit" class="btn btn-primary add_comment_button">Додати коментар</button>
+        </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

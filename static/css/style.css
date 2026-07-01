@@ -93,3 +93,35 @@
     font-size: 40px !important;
     color: black !important;
 }
+
+.text_comment {
+    all: revert;
+    font-size: 20px;
+    border-top: 4px dashed;
+}
+
+.add_comments {
+    all: revert;
+    border-radius: 15px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+    color: cadetblue !important;
+    background-color: cornsilk !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-size: 15px;
+    transition: transform 2s ease;
+    margin-bottom: 10px;
+}
+
+.add_comments:hover {
+    transform: scale(1.07);
+}
+
+.add_comment_form {
+    font-size: 20px !important;
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}
+
+.add_comment_button {
+    margin-left: 220px;
+}
