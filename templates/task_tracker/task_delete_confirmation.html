@@ -14,8 +14,8 @@
         {% csrf_token %}
         {{ form.as_p }}
         <div class="d-grid gap-0 col-3 mx-auto">
-            <button type="submit" class="btn btn-primary delete-btn">Видалити</button>
-            <a class="btn btn-secondary return-btn" href="{% url 'task-list' %}" role="button">Повернутися</a>
+            <button type="submit" class="btn btn-primary delete_btn">Видалити</button>
+            <a class="btn btn-secondary return_btn" href="{% url 'task-detail' task.pk %}" role="button">Повернутися</a>
         </div>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>

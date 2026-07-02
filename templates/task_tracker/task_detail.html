@@ -18,6 +18,7 @@
     <div class="d-grid gap-2 col-3 mx-auto">
         <a class="btn btn-warning" href="{% url 'task-update' task.pk %}" role="button">Змінити завдання</a>
         <a class="btn btn-danger" href="{% url 'task-delete' task.pk %}" role="button">Видалити завдання</a>
+        <a class="btn btn-secondary" href="{% url 'task-list' %}" role="button">Повернутися</a>
     </div>
         <h3 class="text-center p-2 text_comment">Коментарі</h3>
         {% for comment in task.comments.all %}

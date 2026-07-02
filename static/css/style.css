@@ -45,12 +45,6 @@
     color: black;
 }
 
-.create-btn {
-    margin-left: 675px;
-    font-size: 1.5rem;
-    padding: 10px 20px;
-}
-
 .detail_body {
     background-color: bisque;
 }
@@ -74,15 +68,15 @@
     background-color: bisque;
 }
 
-.create-form-btn {
+.create_form_btn {
     margin-left: 675px; 
 }
 
-.return-btn {
+.return_btn {
     margin-top: 20px;
 }
 
-.delete-btn {
+.delete_btn {
     margin-top: 30px;
 }
 
@@ -90,7 +84,7 @@
     all: revert;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif !important;
-    font-size: 40px !important;
+    font-size: 30px !important;
     color: black !important;
 }
 
@@ -124,4 +118,32 @@
 
 .add_comment_button {
     margin-left: 220px;
+}
+
+.edit_body {
+    background-color: bisque;
+}
+
+.edit_text {
+    all: revert;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+    font-size: 30px !important;
+    color: black !important;
+}
+
+.delete_comment_body {
+    background-color: bisque;
+}
+
+.delete_comment_text {
+    all: revert;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+    font-size: 30px !important;
+    color: black !important;
+}
+
+.creating_form_group_button {
+    margin-left: 675px;
 }

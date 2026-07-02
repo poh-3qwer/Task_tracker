@@ -55,3 +55,9 @@ class CommentUpdateView(UserIsOwnerMixin, UpdateView):
 
     def get_success_url(self):
         return reverse_lazy('task-detail', kwargs={'pk': self.object.task.pk})
+
+class DeleteCommentView(UserIsOwnerMixin, DeleteView):
+    model = Comment
+    template_name = 'task_tracker/delete_comment_form.html'
+    def get_success_url(self):
+        return reverse_lazy('task-detail', kwargs={'pk': self.object.task.pk})
