@@ -5,6 +5,10 @@ from .models import Task, Comment
 from .forms import TaskForm, CommentForm
 from .mixins import UserIsOwnerMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
 
 
 class TaskListView(ListView):
@@ -61,3 +65,19 @@ class DeleteCommentView(UserIsOwnerMixin, DeleteView):
     template_name = 'task_tracker/delete_comment_form.html'
     def get_success_url(self):
         return reverse_lazy('task-detail', kwargs={'pk': self.object.task.pk})
+    
+class CustomLoginView(LoginView):
+    template_name = 'task_tracker/login_form.html'
+    redirect_authenticated_user = True
+
+class CustomLogoutView(LogoutView):
+    next_page = 'login'
+
+class RegisterUserView(CreateView):
+    template_name = 'task_tracker/register_form.html'
+    form_class = UserCreationForm
+
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+        return redirect(reverse_lazy('login'))
