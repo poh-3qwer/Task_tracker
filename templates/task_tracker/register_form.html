@@ -10,10 +10,27 @@
 </head>
 <body>
     <h1>Реєстрація</h1>
-    <form method="post">
+    <form class="d-grid justify-content-center" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-primary" type="submit">Зареєструватися</button>
+        <div class="username_tag">
+            {{ form.username.label_tag }}
+        </div>
+        {{ form.username }}
+        {{ form.username.errors }}
+
+        <div class="password1_tag">
+            {{ form.password1.label_tag }}
+        </div>
+        {{ form.password1 }}
+        {{ form.password1.errors }}
+
+        <div class="password2_tag">
+            {{ form.password2.label_tag }}
+        </div>
+        {{ form.password2 }}
+        {{ form.password2.errors }}
+
+        <button class="btn btn-primary mt-2" type="submit">Зареєструватися</button>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

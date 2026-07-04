@@ -25,7 +25,7 @@ class TaskDetailView(DetailView):
         return context
 
     def post(self, request, *args, **kwargs):
-        comment_form = CommentForm(request.POST)
+        comment_form = CommentForm(request.POST, request.FILES)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
             comment.creator = request.user
@@ -55,7 +55,7 @@ class TaskDeleteView(UserIsOwnerMixin, DeleteView):
 
 class CommentUpdateView(UserIsOwnerMixin, UpdateView):
     model = Comment
-    fields = ['text', ]
+    fields = ['text', 'media',]
 
     def get_success_url(self):
         return reverse_lazy('task-detail', kwargs={'pk': self.object.task.pk})

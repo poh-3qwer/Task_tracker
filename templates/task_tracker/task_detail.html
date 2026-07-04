@@ -23,16 +23,33 @@
         <h3 class="text-center p-2 text_comment">Коментарі</h3>
         {% for comment in task.comments.all %}
         <div class="add_comments">
-                <p>{{ comment.text }}</p>
-                <small>{{ comment.creator.username }}</small>
-                <small>{{ comment.created_ad }}</small>
-                <a class="btn btn-outline-primary p-1" href="{% url 'edit-comment' comment.pk %}">Змінити коментар</a>
+            <p>{{ comment.text }}</p>
+            {% if comment.media %}
+            <div>
+                {% with url=comment.media.url|lower %}
+                    {% if ".jpg" in url or ".jpeg" in url or ".png" in url or ".webp" in url or ".gif" in url %}
+                        <img src="{{ comment.media.url }}" alt="Image" style="max-width: 1000px;">
+                    {% elif ".mp4" in url or ".webm" in url or ".mov" in url %}
+                        <video controls>
+                            <source src="{{ comment.media.url }}">
+                            Ваш браузер не підтримує тег video.
+                        </video>
+                    {% else %}
+                        <a href="{{ comment.media.url }}" class="btn btn-primary">Завантажити файл(-и)</a>
+                    {% endif %}
+                {% endwith %}
+            </div>
+            {% endif %}
+
+            <small>{{ comment.creator.username }}</small>
+            <small>{{ comment.created_ad }}</small>
+            <a class="btn btn-outline-primary p-1" href="{% url 'edit-comment' comment.pk %}">Змінити коментар</a>
         </div>
-            {% empty %}
+        {% empty %}
                 <h5 class="text-center">Коментарів ще немає</h5>
-            {% endfor %}
+        {% endfor %}
     <div class="add_comment_form">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ comment_form.as_p }}
             <button type="submit" class="btn btn-primary add_comment_button">Додати коментар</button>
