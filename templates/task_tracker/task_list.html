@@ -8,8 +8,15 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Task list</title>
 </head>
-<body class="main_body">
+<body>
     <h1 class="app_title">Task Tracker</h1>
+    <div class="d-flex gap-2 mb-3">
+        <a class="btn btn-primary" href="{% url 'register' %}" role="button">Зареєструватися</a>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button  class="btn btn-secondary logout_button" type="submit">Вихід</button>
+        </form>
+    </div>
     {% for task in tasks %}
     <div class="task_list">
         <a href="{% url 'task-detail' task.pk %}"> {{ task.title }} </a>
@@ -18,11 +25,6 @@
     </div>
     {% endfor %}
     <a class="btn btn-primary create_form_btn" href="{% url 'task-create' %}" role="button">Створити завдання</a>
-    <a class="btn btn-primary" href="{% url 'register' %}" role="button">Зареєструватися</a>
-        <form action="{% url 'logout' %}" method="post">
-            {% csrf_token %}
-            <button type="submit">Вихід</button>
-        </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>

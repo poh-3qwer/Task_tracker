@@ -1,8 +1,8 @@
-.main_body {
+body {
     background-color: bisque;
 }
 
-.app_title {
+h1 {
     all: revert;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -26,18 +26,6 @@
     transform: scale(1.07);
 }
 
-.creation_form_body {
-    background-color: bisque;
-}
-
-.creation_form_text {
-    all: revert;
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 30px;
-    color: black;
-}
-
 .creation_form {
     all: unset;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -45,27 +33,11 @@
     color: black;
 }
 
-.detail_body {
-    background-color: bisque;
-}
-
 .task_detail {
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif !important;
     font-size: 30px !important;
     color: cadetblue !important;
-}
-
-.detail_txt {
-    all: revert;
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
-    font-size: 30px !important;
-    color: black !important;
-}
-
-.delete_body {
-    background-color: bisque;
 }
 
 .create_form_btn {
@@ -78,14 +50,6 @@
 
 .delete_btn {
     margin-top: 30px;
-}
-
-.delete_txt {
-    all: revert;
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
-    font-size: 30px !important;
-    color: black !important;
 }
 
 .text_comment {
@@ -120,30 +84,17 @@
     margin-left: 220px;
 }
 
-.edit_body {
-    background-color: bisque;
-}
-
-.edit_text {
-    all: revert;
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
-    font-size: 30px !important;
-    color: black !important;
-}
 
 .delete_comment_body {
     background-color: bisque;
 }
 
-.delete_comment_text {
-    all: revert;
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
-    font-size: 30px !important;
-    color: black !important;
-}
-
 .creating_form_group_button {
     margin-left: 675px;
+}
+
+.logout_button {
+    margin-left: 1200px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
