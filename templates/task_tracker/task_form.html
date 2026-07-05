@@ -13,8 +13,12 @@
     <h1 class="creation_form_text">Форма для створення</h1>
         <form method="post">
             {% csrf_token %}
-            <div class="creation_form">
-            {{ form.as_p }}
+            <div class=" d-grid gap-2 w-50 mx-auto creation_form">
+                <h2> Назва: {{ form.title }}</h2>
+                <h2>Опис: {{ form.description }}</h2>
+                <h2>Статус: {{ form.status }}</h2>
+                <h2>Приорітет: {{ form.priority }}</h2>
+                <h2>Дедлайн: {{ form.due_date }}</h2>
             </div>
             <div class="creating_form_group_button">
                 <button type="submit" class="btn btn-success btn-lg">Створити</button>

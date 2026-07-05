@@ -14,7 +14,7 @@
         <a class="btn btn-primary" href="{% url 'register' %}" role="button">Зареєструватися</a>
         <form action="{% url 'logout' %}" method="post">
             {% csrf_token %}
-            <button  class="btn btn-secondary logout_button" type="submit">Вихід</button>
+            <button  class="btn btn-secondary px-4 logout_button" type="submit">Вихід / Логін</button>
         </form>
     </div>
     {% for task in tasks %}
@@ -22,6 +22,7 @@
         <a href="{% url 'task-detail' task.pk %}"> {{ task.title }} </a>
         <p> {{ task.description }} </p>
         <p> {{ task.status }} </p>
+        <p class="fw-semibold"> {{ task.creator }}</p>
     </div>
     {% endfor %}
     <a class="btn btn-primary create_form_btn" href="{% url 'task-create' %}" role="button">Створити завдання</a>

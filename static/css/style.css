@@ -10,12 +10,19 @@ h1 {
     color: black;
 }
 
+h2 {
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: black; 
+    font-weight: 700;
+}
+
 .task_list {
     border-color: rgb(231, 249, 241);
     border-radius: 15px;
     text-align: center;
     color: cadetblue;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
     background-color: cornsilk;
     transition: transform 2s ease;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -68,11 +75,11 @@ h1 {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
     font-size: 15px;
     transition: transform 2s ease;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .add_comments:hover {
-    transform: scale(1.07);
+    transform: scale(1.06);
 }
 
 .add_comment_form {
@@ -81,7 +88,7 @@ h1 {
 }
 
 .add_comment_button {
-    margin-left: 220px;
+    margin-left: 290px;
 }
 
 
@@ -90,7 +97,7 @@ h1 {
 }
 
 .creating_form_group_button {
-    margin-left: 675px;
+    margin-left: 570px;
 }
 
 .logout_button {
@@ -132,4 +139,34 @@ h1 {
     font-size: 20px;
     font-weight: 700;
     color: black;
+}
+
+.current_media_tag {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: black;
+}
+
+.change_media_tag {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: black;
+}
+
+.mediafiles_tag {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: black;
+}
+
+.input_file {
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+.change_media {
+    margin-left: 25px;
 }

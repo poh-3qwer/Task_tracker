@@ -14,6 +14,9 @@
         <h2>{{ task.title }}</h2>
         <p>{{ task.status }}</p>
         <p>{{ task.priority }}</p>
+        {% if task.due_date %}
+            <p>{{ task.due_date}}</p>
+        {% endif %}
     </div>
     <div class="d-grid gap-2 col-3 mx-auto">
         <a class="btn btn-warning" href="{% url 'task-update' task.pk %}" role="button">Змінити завдання</a>
@@ -28,7 +31,7 @@
             <div>
                 {% with url=comment.media.url|lower %}
                     {% if ".jpg" in url or ".jpeg" in url or ".png" in url or ".webp" in url or ".gif" in url %}
-                        <img src="{{ comment.media.url }}" alt="Image" style="max-width: 1000px;">
+                        <img src="{{ comment.media.url }}" alt="Image" style="max-width: 500px;">
                     {% elif ".mp4" in url or ".webm" in url or ".mov" in url %}
                         <video controls>
                             <source src="{{ comment.media.url }}">
@@ -41,8 +44,8 @@
             </div>
             {% endif %}
 
-            <small>{{ comment.creator.username }}</small>
-            <small>{{ comment.created_ad }}</small>
+            <small class="fw-semibold">{{ comment.creator.username }}</small>
+            <small>{{ comment.created_at }}</small>
             <a class="btn btn-outline-primary p-1" href="{% url 'edit-comment' comment.pk %}">Змінити коментар</a>
         </div>
         {% empty %}
@@ -51,7 +54,13 @@
     <div class="add_comment_form">
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ comment_form.as_p }}
+            <h2>Коментар: {{ comment_form.text }}</h2>
+            <div class="row">
+                <label class="col-sm-1 mediafiles_tag" for="{{ form.media.id_for_label }}">Медіафайли:</label>
+                <div class="col-sm-3 input_file">
+                    <input type="file" name="media" id="{{ form.media.id_for_label }}" class="form-control">
+                </div>
+            </div>
             <button type="submit" class="btn btn-primary add_comment_button">Додати коментар</button>
         </form>
     </div>
