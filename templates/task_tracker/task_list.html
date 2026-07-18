@@ -22,6 +22,9 @@
         <a href="{% url 'task-detail' task.pk %}"> {{ task.title }} </a>
         <p> {{ task.description }} </p>
         <p> {{ task.status }} </p>
+        {% if task.due_date %}
+            <p>{{ task.due_date }}</p>
+        {% endif %}
         <p class="fw-semibold"> {{ task.creator }}</p>
     </div>
     {% endfor %}
