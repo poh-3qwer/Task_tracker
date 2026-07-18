@@ -33,7 +33,7 @@
                     {% if ".jpg" in url or ".jpeg" in url or ".png" in url or ".webp" in url or ".gif" in url %}
                         <img src="{{ comment.media.url }}" alt="Image" style="max-width: 500px;">
                     {% elif ".mp4" in url or ".webm" in url or ".mov" in url %}
-                        <video controls>
+                        <video controls width="500">
                             <source src="{{ comment.media.url }}">
                             Ваш браузер не підтримує тег video.
                         </video>
